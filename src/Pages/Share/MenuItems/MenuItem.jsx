@@ -1,6 +1,5 @@
 
 const MenuItem = ({ items }) => {
-    console.log(items);
     const { name, image, price, recipe } = items
     return (
         <div className="flex space-y-3">

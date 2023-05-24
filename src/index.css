@@ -47,3 +47,9 @@
     hover:text-titleColor transition duration-200
     hover:border-white
 }
+
+/* order food style */
+.sub_btn{
+    @apply px-4 border-none font-Inter font-bold text-2xl uppercase hover:border-b-4 
+    hover:border-btn_color bottom-0 text-btn_color
+}

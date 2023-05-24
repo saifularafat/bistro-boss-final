@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Banner from "../Banner/Banner";
 import Call from "../CallSection/Call";
 import CategorySwiper from "../Category/CategorySwiper";
@@ -10,6 +11,11 @@ import Testimonials from "../Testimonials/Testimonials";
 const Home = () => {
     return (
         <div>
+            <Helmet>
+                <title>
+                    Bistro Boss | Home
+                </title>
+            </Helmet>
             <Banner />
             <div className="max-w-6xl mx-auto">
                 <CategorySwiper />

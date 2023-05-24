@@ -6,9 +6,9 @@ const NavBer = () => {
             <div className="flex max-w-6xl mx-auto items-center justify-between text-white py-3">
                 <div>
                     <Link to='/'>
-                        <h2>BISTRO BOSS</h2>
+                        <h2 className="font-Cinzel font-extrabold text-3xl text-white tracking-wider">BISTRO BOSS</h2>
                     </Link>
-                    <p>Restaurant</p>
+                    <p className="font-Cinzel font-bold text-2xl uppercase tracking-widest">Restaurant</p>
                 </div>
                 <div>
                     <ul className="flex items-center space-x-5">
@@ -28,13 +28,13 @@ const NavBer = () => {
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink>
+                            <NavLink to= '/menu'>
                                 Our Menu
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink>
-                                Our Shop
+                            <NavLink to= 'orderFood'>
+                                Order Food
                             </NavLink>
                         </li>
                         <li>

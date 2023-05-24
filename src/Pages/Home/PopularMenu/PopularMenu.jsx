@@ -1,19 +1,14 @@
-import { useEffect, useState } from "react";
 import SectionTitle from "../../../Component/SectionTitle/SectionTitle";
 import MenuItem from "../../Share/MenuItems/MenuItem";
 import Button from "../../../Component/Button/Button";
+import useMenu from "../../../Component/useMenu/useMenu";
+import { Link } from "react-router-dom";
 
 const PopularMenu = () => {
-    const [menu, setMenu] = useState([]);
+    const [menu] = useMenu();
+    console.log(menu);
+    const Popular = menu.filter(item => item.category === 'popular');
 
-    useEffect(() => {
-        fetch('menu.json')
-            .then(res => res.json())
-            .then(data => {
-                const PopularItems = data.filter(item => item.category == 'popular');
-                setMenu(PopularItems)
-            })
-    }, [])
     return (
         <section className="mb-20">
             <SectionTitle
@@ -24,15 +19,17 @@ const PopularMenu = () => {
 
             <div className="grid md:grid-cols-2 gap-7 mt-12 mb-10">
                 {
-                    menu.map(items => <MenuItem
+                    Popular.map(items => <MenuItem
                         key={items._id}
                         items={items}
                     ></MenuItem>)
                 }
             </div>
             <div className="text-center">
-                <Button
-                buttonName={'View Full  Menu'}></Button>
+                <Link to='/menu'>
+                    <Button
+                        buttonName={'View Full  Menu'}></Button>
+                </Link>
             </div>
 
         </section>
