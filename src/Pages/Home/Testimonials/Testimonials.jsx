@@ -43,7 +43,7 @@ const Testimonials = () => {
                                 style={{ maxWidth: 180 }}
                                 value={review.rating}
                                 readOnly
-                                />
+                                className="text-btn_color border-btn_color" />
                                 <FaQuoteLeft  className="w-12 h-12 my-5 "/>
                             <p className="md:max-w-[1024px] text-center font-Inter font-normal text-descColor">{review.details}</p>
                             <h1 className="font-Inter font-semibold text-3xl text-btn_color mt-2">{review.name}</h1>

@@ -6,7 +6,7 @@ const Main = () => {
     return (
         <div>
             <NavBer />
-            <div className="max-w-screen-xl mx-auto min-h-[calc(100vh-272px)]">
+            <div className="min-h-[calc(100vh-272px)]">
                 <Outlet />
             </div>
             <Footer />

@@ -33,9 +33,17 @@
 .price_style {
     @apply text-btn_color font-Inter text-xl
 }
+
+/* chef RECOMMENDS */
+.chef_btn{
+    @apply uppercase text-btn_color text-xl font-Inter font-medium py-3 px-7 
+    border-b-4 border-btn_color rounded-xl hover:bg-btn_text transition duration-200
+    hover:border-titleColor border-t-2 border-t-white shadow-xl 
+}
 /* feature section style */
 .feature_btn {
-    @apply text-xl font-Inter font-semibold text-white py-3 px-7 
-    border-b-4 border-white shadow-2xl rounded-xl hover:border-x hover:bg-white 
-    hover:text-titleColor transition duration-200 tracking-wide
+    @apply uppercase text-white text-xl font-Inter font-medium py-3 px-7 
+    border-b-4 border-white rounded-xl hover:bg-white 
+    hover:text-titleColor transition duration-200
+    hover:border-white
 }

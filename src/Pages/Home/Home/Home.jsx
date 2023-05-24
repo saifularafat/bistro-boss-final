@@ -9,7 +9,7 @@ import Testimonials from "../Testimonials/Testimonials";
 
 const Home = () => {
     return (
-        <div> 
+        <div>
             <Banner />
             <div className="max-w-6xl mx-auto">
                 <CategorySwiper />
@@ -17,7 +17,9 @@ const Home = () => {
                 <PopularMenu />
                 <Call />
                 <ChefReCommends />
-                <FeatureItems />
+            </div>
+            <FeatureItems />
+            <div className="max-w-6xl mx-auto">
                 <Testimonials />
             </div>
         </div>
