@@ -9,8 +9,6 @@ import menuImg4 from "./../../../assets/menu/soup-bg.jpg";
 import SectionTitle from "../../../Component/SectionTitle/SectionTitle";
 import useMenu from "../../../Component/useMenu/useMenu";
 import MenuCategory from "../MenuCategory/MenuCategory";
-import Button from "../../../Component/Button/Button";
-import { Link } from "react-router-dom";
 
 const Menu = () => {
     const [menu] = useMenu();
@@ -40,7 +38,7 @@ const Menu = () => {
                     </span>
                 }
             ></Cover>
-            <div className="max-w-6xl mx-auto">
+
                 {/* offered menu items */}
                 <SectionTitle
                     heading="TODAY'S OFFER"
@@ -48,101 +46,34 @@ const Menu = () => {
                 ></SectionTitle>
                 <MenuCategory items={offered}>
                 </MenuCategory>
-                <div className="text-center my-10">
-                    <Link to={`/orderFood`}>
-                        <Button buttonName="ORDER YOUR FAVORITE FOOD">
-                        </Button>
-                    </Link>
-                </div>
-            </div>
             {/* dessert menu items */}
-            <Cover img={menuImg1}
-                title={
-                    <span
-                        className="uppercase font-Cinzel font-bold text-6xl text-white">
-                        dessert
-                    </span>}
-                description={
-                    <span className="uppercase">
-                        Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                    </span>
-                }
-            ></Cover>
-            <div className="max-w-6xl mx-auto">
-                <MenuCategory items={dessert}></MenuCategory>
-                <div className="text-center my-10">
-                <Link to='/orderFood'>
-                        <Button buttonName="ORDER YOUR FAVORITE FOOD">
-                        </Button>
-                    </Link>
-                </div>
-            </div>
+            <MenuCategory
+                items={dessert}
+                title= 'dessert'
+                description= " Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                img={menuImg1}
+            ></MenuCategory>
             {/* pizza menu  items */}
-            <Cover img={menuImg2}
-                title={
-                    <span
-                        className="uppercase font-Cinzel font-bold text-6xl text-white">
-                        pizza
-                    </span>}
-                description={
-                    <span className="uppercase">
-                        Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                    </span>
-                }
-            ></Cover>
-            <div className="max-w-6xl mx-auto">
-                <MenuCategory items={pizza}></MenuCategory>
-                <div className="text-center my-10">
-                <Link to='/orderFood'>
-                        <Button buttonName="ORDER YOUR FAVORITE FOOD">
-                        </Button>
-                    </Link>
-                </div>
-            </div>
+            <MenuCategory
+                items={pizza}
+                img={menuImg2}
+                title= 'pizza'
+                description=" Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+            ></MenuCategory>
             {/* salad menu  items */}
-            <Cover img={menuImg3}
-                title={
-                    <span
-                        className="uppercase font-Cinzel font-bold text-6xl text-white">
-                        salad
-                    </span>}
-                description={
-                    <span className="uppercase">
-                        Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                    </span>
-                }
-            ></Cover>
-            <div className="max-w-6xl mx-auto">
-                <MenuCategory items={salad}></MenuCategory>
-                <div className="text-center my-10">
-                <Link to='/orderFood'>
-                        <Button buttonName="ORDER YOUR FAVORITE FOOD">
-                        </Button>
-                    </Link>
-                </div>
-            </div>
+            <MenuCategory
+                items={salad}
+                img={menuImg3}
+                title= 'salad'
+                description=" Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+            ></MenuCategory>
             {/* soup menu  items */}
-            <Cover img={menuImg4}
-                title={
-                    <span
-                        className="uppercase font-Cinzel font-bold text-6xl text-white">
-                        soup
-                    </span>}
-                description={
-                    <span className="uppercase">
-                        Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                    </span>
-                }
-            ></Cover>
-            <div className="max-w-6xl mx-auto">
-                <MenuCategory items={soup}></MenuCategory>
-                <div className="text-center my-10">
-                <Link to='/orderFood'>
-                        <Button buttonName="ORDER YOUR FAVORITE FOOD">
-                        </Button>
-                    </Link>
-                </div>
-            </div>
+            <MenuCategory
+                items={soup}
+                img={menuImg4}
+                title= 'soup'
+                description=" Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+            ></MenuCategory>
         </div>
     );
 };

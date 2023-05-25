@@ -33,7 +33,7 @@ const NavBer = () => {
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to= 'orderFood'>
+                            <NavLink to= 'orderFood/salad'>
                                 Order Food
                             </NavLink>
                         </li>

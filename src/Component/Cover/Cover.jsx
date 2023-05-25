@@ -18,8 +18,10 @@ const Cover = ({ img, title, description }) => {
 
                     <div className="hero-content text-center text-neutral-content">
                         <div className="max-w-md">
-                            <h1 className="">{title}</h1>
-                            <p className="">{description}</p>
+                            <h1 className="uppercase font-Cinzel font-bold text-6xl text-white">
+                                {title}
+                            </h1>
+                            <p className="font-Inter">{description}</p>
                         </div>
                     </div>
                 </div>
