@@ -27,7 +27,7 @@ const ChefReCommends = () => {
             </SectionTitle>
 
             <div className="mt-12">
-                <div className="grid md:grid-cols-3 gap-12">
+                <div className="grid md:grid-cols-3 gap-12 mx-2">
                     {chefReCommendItems}
                     {chefReCommendItems}
                     {chefReCommendItems}

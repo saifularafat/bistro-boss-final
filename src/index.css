@@ -11,7 +11,7 @@
 
 /* section title style */
 .section_title{
-    @apply border-y-4 text-4xl font-Inter font-normal text-titleColor py-5
+    @apply border-y-4 md:text-4xl text-3xl font-Inter font-normal text-titleColor md:py-5 py-3
 }
 .section_subTitle{
     @apply text-subTitle_color text-xl font-Inter font-normal italic pb-2
@@ -52,4 +52,16 @@
 .sub_btn{
     @apply px-4 border-none font-Inter font-bold text-2xl uppercase hover:border-b-4 
     hover:border-btn_color bottom-0 text-btn_color
+}
+
+/* login style */
+.login_submit_btn{
+    @apply w-full py-2 bg-login_btn text-white text-xl font-Inter font-bold 
+    rounded-lg tracking-wide
+}
+.input_label{
+    @apply label-text font-Inter font-bold text-xl text-descColor
+}
+.social_btn {
+    @apply w-10 h-10 text-descColor border-2 border-descColor p-2 rounded-full
 }

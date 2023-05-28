@@ -17,7 +17,7 @@ const Home = () => {
                 </title>
             </Helmet>
             <Banner />
-            <div className="max-w-6xl mx-auto">
+            <div className="md:max-w-6xl mx-auto">
                 <CategorySwiper />
                 <ServiceBg />
                 <PopularMenu />
@@ -25,7 +25,7 @@ const Home = () => {
                 <ChefReCommends />
             </div>
             <FeatureItems />
-            <div className="max-w-6xl mx-auto">
+            <div className="md:max-w-6xl mx-auto">
                 <Testimonials />
             </div>
         </div>

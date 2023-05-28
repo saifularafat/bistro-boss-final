@@ -2,12 +2,12 @@ import img from './../../../assets/home/chef-service.jpg'
 
 const ServiceBg = () => {
     return (
-        <div className='my-24'>
+        <div className='md:my-28 my-8'>
             <div className="h-full w-full relative">
                 <img src={img} alt=""
                 />
                 <div
-                    className="absolute md:pt-16 md:pb-10 md:p-40 p-5 md:w-[772px] mx-auto bg-white  translate-x-1/4 md:top-12 top-2 text-center">
+                    className="absolute md:pt-16 md:pb-10 md:p-40 p-5 md:w-[772px] mx-auto bg-white  translate-x-1/4 md:top-12 top-3 text-center">
                     <h1
                         className="text-titleColor font-normal md:text-4xl text-2xl uppercase font-Cinzel pb-2"> Bistro Boss </h1>
                     <p

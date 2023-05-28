@@ -21,7 +21,13 @@ export default {
         subTitle_color: '#D99904', 
         btn_color: '#BB8506', 
         btn_text: '#1F2937', 
+        login_btn: '#D1A054B2', 
       },
+      /* background image */
+      backgroundImage: {
+        'login_img': "url('./src/assets/others/authentication.png')",
+        // 'footer-texture': "url('/img/footer-texture.png')",
+      }
     },
   },
   plugins: [require("daisyui")],
