@@ -1,25 +1,19 @@
 import { useContext } from "react";
 import { AuthContext } from "../Pages/Provider/AuthProvider";
-import { Bars } from 'react-loader-spinner'
 import { Navigate, useLocation } from "react-router-dom";
+import loadImg from './../assets/others/loader3.gif'
 
 const PrivateRouter = ({ children }) => {
     const { user, loading } = useContext(AuthContext);
     const location = useLocation()
 
     if (loading) {
-        return <Bars
-            height="80"
-            width="80"
-            color="#4fa94d"
-            ariaLabel="bars-loading"
-            wrapperStyle={{}}
-            wrapperClass=""
-            visible={true}
-        />
+        return <div className="flex justify-center">
+            <img src={loadImg} alt="" className="md:mt-16 mt-7"/>
+        </div>
     }
     if (user) {
-       return children;
+        return children;
     }
     return <Navigate
         to='/login'

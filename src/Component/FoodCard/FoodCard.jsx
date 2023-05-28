@@ -1,6 +1,10 @@
 
 const FoodCard = ({ item }) => {
     const { name, image, price, recipe } = item;
+
+    const handlerAddToCart = item => {
+        console.log('This is a Items', item );
+    }
     return (
         <div className="card md:w-96 bg-slate-100 shadow-2xl mx-3">
             {/* <figure> */}
@@ -11,7 +15,9 @@ const FoodCard = ({ item }) => {
                 <h2 className="menu_title">{name}</h2>
                 <p className="recipe_style">{recipe}</p>
                 <div className="text-center">
-                    <button className="chef_btn bg-slate-100">Buy Now</button>
+                    <button 
+                    onClick={() => handlerAddToCart(item)}
+                    className="chef_btn bg-slate-100">Add To Cart</button>
                 </div>
             </div>
         </div>

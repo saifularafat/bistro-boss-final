@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { FaShoppingCart } from "react-icons/fa";
 
 const NavBer = () => {
 
@@ -38,11 +39,6 @@ const NavBer = () => {
                         </li>
                         <li>
                             <NavLink>
-                                CONTACT us
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink>
                                 DASHBOARD
                             </NavLink>
                         </li>
@@ -55,6 +51,14 @@ const NavBer = () => {
                             <NavLink to='orderFood/salad'>
                                 Order Food
                             </NavLink>
+                        </li>
+                        <li>
+                            <Link to='/'>
+                                <button className="flex items-center gap-2">
+                                    <FaShoppingCart className="w-6 h-6"/>
+                                    <div className="badge badge-secondary -mt-4">+0</div>
+                                </button>
+                            </Link>
                         </li>
                         <li className="pl-8">
                             {

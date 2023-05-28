@@ -65,3 +65,12 @@
 .social_btn {
     @apply w-10 h-10 text-descColor border-2 border-descColor p-2 rounded-full
 }
+
+
+
+.footer_title{
+    @apply font-Inter font-medium text-3xl py-6
+}
+.footer_desc{
+    @apply text-xl font-Inter font-medium
+}
