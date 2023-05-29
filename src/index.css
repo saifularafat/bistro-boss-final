@@ -74,3 +74,16 @@
 .footer_desc{
     @apply text-xl font-Inter font-medium
 }
+
+
+
+
+
+/* DashBoard section style */
+
+.drawer-side a{
+    background-color: transparent;
+}
+.drawer-side a.active{
+    color: white;
+}

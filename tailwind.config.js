@@ -22,6 +22,7 @@ export default {
         btn_color: '#BB8506', 
         btn_text: '#1F2937', 
         login_btn: '#D1A054B2', 
+        dashboard_bg: '#D1A054', 
       },
       /* background image */
       backgroundImage: {
