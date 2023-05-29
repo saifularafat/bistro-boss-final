@@ -3,10 +3,13 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import { FaShoppingCart } from "react-icons/fa";
+import useCart from "../../../Component/useCart/useCart";
 
 const NavBer = () => {
 
     const { user, logOut } = useContext(AuthContext);
+    
+    const [ , cart ] = useCart();
 
     const handlerLogOut = () => {
         logOut()
@@ -38,7 +41,7 @@ const NavBer = () => {
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink>
+                            <NavLink to= '/dashboard'>
                                 DASHBOARD
                             </NavLink>
                         </li>
@@ -56,7 +59,7 @@ const NavBer = () => {
                             <Link to='/'>
                                 <button className="flex items-center gap-2">
                                     <FaShoppingCart className="w-6 h-6"/>
-                                    <div className="badge badge-secondary -mt-4">+0</div>
+                                    <div className="badge badge-secondary -mt-4">+{ cart?.length || 0 }</div>
                                 </button>
                             </Link>
                         </li>

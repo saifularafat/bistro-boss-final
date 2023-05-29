@@ -6,7 +6,8 @@ import Menu from "../Pages/Menu/Menu/Menu";
 import OrderFood from "../Pages/OrderFood/OrderFood/OrderFood";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
-import PrivateRouter from "./PrivateRouter";
+import DashboardLayout from "../layout/DashboardLayout";
+// import PrivateRouter from "./PrivateRouter";
 
 const router = createBrowserRouter([
   {
@@ -22,9 +23,11 @@ const router = createBrowserRouter([
         path: 'menu',
         element: <Menu />
       },
+      /* TODO: Private Router add */
       {
         path: 'orderFood/:category',
-        element: <PrivateRouter><OrderFood /></PrivateRouter>
+        element: <OrderFood />
+        // element: <PrivateRouter><OrderFood /></PrivateRouter>
       },
       {
         path: 'login',
@@ -36,6 +39,15 @@ const router = createBrowserRouter([
       }
     ]
   },
+  {
+    path:'/dashboard',
+    element: <DashboardLayout />,
+    children: [
+      {
+        
+      }
+    ]
+  }
 ]);
 
 export default router;
