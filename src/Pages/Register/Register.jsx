@@ -15,23 +15,35 @@ const Register = () => {
     const navigate = useNavigate();
 
     const onSubmit = data => {
-        console.log(data)
         CreateUser(data.email, data.password)
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
-                        console.log('User Profile Updated');
-                        Swal.fire({
-                            position: 'top-center',
-                            icon: 'success',
-                            title: 'Your Register Successful',
-                            showConfirmButton: false,
-                            timer: 2000
+
+                        const saveUser = { name: data.name, email: data.email }
+                        fetch('http://localhost:5000/user', {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(saveUser)
                         })
-                        navigate('/login')
-                        reset();
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.insertedId) {
+                                    reset();
+                                    Swal.fire({
+                                        position: 'top-center',
+                                        icon: 'success',
+                                        title: 'Your Register Successful',
+                                        showConfirmButton: false,
+                                        timer: 2000
+                                    })
+                                    navigate('/login')
+                                }
+                            })
                     })
                     .catch(error => {
                         console.log(error.message);

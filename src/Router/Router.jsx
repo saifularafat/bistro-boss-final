@@ -6,7 +6,7 @@ import Menu from "../Pages/Menu/Menu/Menu";
 import OrderFood from "../Pages/OrderFood/OrderFood/OrderFood";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
-// import PrivateRouter from "./PrivateRouter";
+import PrivateRouter from "./PrivateRouter";
 
 
 import DashboardLayout from "../layout/DashboardLayout";
@@ -16,6 +16,8 @@ import Reservation from "../Pages/Dashboard/Reservation/Reservation";
 import MyCart from "../Pages/Dashboard/MyCart/MyCart";
 import Review from "../Pages/Dashboard/Review/Review";
 import Booking from "../Pages/Dashboard/Booking/Booking";
+import Contact from "../Pages/Contact/Contact";
+import AllUsers from "../Pages/Dashboard/Admin/AllUsers/AllUsers";
 
 
 const router = createBrowserRouter([
@@ -32,11 +34,14 @@ const router = createBrowserRouter([
         path: 'menu',
         element: <Menu />
       },
-      /* TODO: Private Router add */
+      {
+        path: '/contact',
+        element: <Contact />
+      },
       {
         path: 'orderFood/:category',
         element: <OrderFood />
-        // element: <PrivateRouter><OrderFood /></PrivateRouter>
+       
       },
       {
         path: 'login',
@@ -50,7 +55,7 @@ const router = createBrowserRouter([
   },
   {
     path:'/dashboard',
-    element: <DashboardLayout />,
+    element: <PrivateRouter> <DashboardLayout /></PrivateRouter> ,
     children: [
       {
         path: '/dashboard/userHome',
@@ -75,6 +80,13 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/booking',
         element: <Booking />
+      },
+
+
+      /* Admin Router setUP */
+      {
+        path: '/dashboard/allUsers',
+        element: <AllUsers />
       },
     ]
   }

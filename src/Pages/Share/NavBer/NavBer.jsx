@@ -9,7 +9,7 @@ const NavBer = () => {
 
     const { user, logOut } = useContext(AuthContext);
     
-    const [ , cart ] = useCart();
+    const [ cart ] = useCart();
 
     const handlerLogOut = () => {
         logOut()
@@ -46,6 +46,11 @@ const NavBer = () => {
                             </NavLink>
                         </li>
                         <li>
+                            <NavLink to= '/'>
+                                CONTACT
+                            </NavLink>
+                        </li>
+                        <li>
                             <NavLink to='/menu'>
                                 Our Menu
                             </NavLink>
@@ -56,7 +61,7 @@ const NavBer = () => {
                             </NavLink>
                         </li>
                         <li>
-                            <Link to='/'>
+                            <Link to='/dashboard/myCart'>
                                 <button className="flex items-center gap-2">
                                     <FaShoppingCart className="w-6 h-6"/>
                                     <div className="badge badge-secondary -mt-4">+{ cart?.length || 0 }</div>
