@@ -5,9 +5,11 @@ import img1 from './../../../assets/home/slide1.jpg'
 const ChefReCommends = () => {
     const chefReCommendItems = [
         <>
-            <div className="card md:w-96 bg-[#F3F3F3] shadow-xl " >
+            <div
+                key={1}
+                className="card md:w-96 bg-[#F3F3F3] shadow-xl " >
                 {/* <figure> */}
-                    <img src={img1} alt="Salad" className="md:h-72 md:w-96" />
+                <img src={img1} alt="Salad" className="md:h-72 md:w-96" />
                 {/* </figure> */}
                 <div className="card-body text-center">
                     <h2 className="font-Inter font-semibold text-2xl text-titleColor">Caeser Salad</h2>
@@ -19,6 +21,7 @@ const ChefReCommends = () => {
             </div >
         </>
     ]
+
     return (
         <div>
             <SectionTitle

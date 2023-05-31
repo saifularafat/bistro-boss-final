@@ -3,11 +3,14 @@ import { Helmet } from "react-helmet-async";
 import { FaTrashAlt } from "react-icons/fa";
 import { FiUsers } from "react-icons/fi";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../../../Component/hook/useAxiosSecure";
+import SectionTitle from "../../../../Component/SectionTitle/SectionTitle";
 
 const AllUsers = () => {
+    const [axiosSecure] = useAxiosSecure();
     const { data: users = [], refetch } = useQuery(['users'], async () => {
-        const res = await fetch('http://localhost:5000/user')
-        return res.json();
+        const res = await axiosSecure.get('/user')
+        return res.data;
     })
 
     const handlerMakeAdmin = user => {
@@ -79,6 +82,11 @@ const AllUsers = () => {
                         Bistro Boss || All Users
                     </title>
                 </Helmet>
+            </div>
+            <div className="w-full">
+                <SectionTitle
+                    heading='MANAGE ALL USERS'
+                    subHeading='How mony' />
             </div>
             <h2 className="text-3xl font-semibold text-center h-20"> Total Users: {users.length}</h2>
 

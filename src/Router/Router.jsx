@@ -18,6 +18,11 @@ import Review from "../Pages/Dashboard/Review/Review";
 import Booking from "../Pages/Dashboard/Booking/Booking";
 import Contact from "../Pages/Contact/Contact";
 import AllUsers from "../Pages/Dashboard/Admin/AllUsers/AllUsers";
+import AddItem from "../Pages/Dashboard/Admin/AddItem/AddItem";
+import AdminRouter from "./AdminRouter";
+import AdminHome from "../Pages/Dashboard/Admin/AdminHome/AdminHome";
+import ManageItem from "../Pages/Dashboard/Admin/ManageItem/ManageItem";
+import AllBooking from "../Pages/Dashboard/Admin/AllBooking/AllBooking";
 
 
 const router = createBrowserRouter([
@@ -41,7 +46,7 @@ const router = createBrowserRouter([
       {
         path: 'orderFood/:category',
         element: <OrderFood />
-       
+
       },
       {
         path: 'login',
@@ -54,11 +59,11 @@ const router = createBrowserRouter([
     ]
   },
   {
-    path:'/dashboard',
-    element: <PrivateRouter> <DashboardLayout /></PrivateRouter> ,
+    path: '/dashboard',
+    element: <PrivateRouter> <DashboardLayout /></PrivateRouter>,
     children: [
       {
-        path: '/dashboard/userHome',
+        path: '/dashboard/home',
         element: <UserHome />
       },
       {
@@ -85,8 +90,24 @@ const router = createBrowserRouter([
 
       /* Admin Router setUP */
       {
+        path: '/dashboard/adminHome',
+        element: <AdminRouter><AdminHome /></AdminRouter>
+      },
+      {
+        path: '/dashboard/addItem',
+        element: <AdminRouter><AddItem /></AdminRouter>
+      },
+      {
+        path: '/dashboard/manegeItem',
+        element: <AdminRouter><ManageItem /></AdminRouter>
+      },
+      {
+        path: '/dashboard/booking',
+        element: <AdminRouter><AllBooking /></AdminRouter>
+      },
+      {
         path: '/dashboard/allUsers',
-        element: <AllUsers />
+        element: <AdminRouter><AllUsers /></AdminRouter>
       },
     ]
   }

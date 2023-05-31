@@ -5,6 +5,7 @@ import { MdEmail, MdReviews } from "react-icons/md";
 import { SlCalender } from "react-icons/sl";
 import { TfiMenuAlt } from "react-icons/tfi";
 import useCart from "../Component/useCart/useCart";
+import useAdmin from "../Component/hook/useAdmin";
 
 
 const DashboardLayout = () => {
@@ -12,7 +13,9 @@ const DashboardLayout = () => {
     const [cart] = useCart();
 
     //TODO : admin user data server insert dynamic data from database
-    const isAdmin = true;
+    // const isAdmin = true;
+    const [ isAdmin ] = useAdmin();
+
     return (
         <div className="max-w-7xl mx-auto">
             <div className="drawer drawer-mobile">
@@ -38,22 +41,22 @@ const DashboardLayout = () => {
                             isAdmin ?
                                 <>
                                     <li>
-                                        <NavLink to='/dashboard/userHome'>
+                                        <NavLink to='/dashboard/home'>
                                             <AiFillHome /> <span>Admin Home</span>
                                         </NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to='/dashboard/reservation'>
+                                        <NavLink to='/dashboard/addItem'>
                                             <FaUtensils /> <span>ADD ITEM</span>
                                         </NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to='/dashboard/payment'>
+                                        <NavLink to='/dashboard/manegeItem'>
                                             <TfiMenuAlt /> <span>MANAGE ITEM</span>
                                         </NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to='/dashboard/payment'>
+                                        <NavLink to='/dashboard/booking'>
                                             <FaBook /> <span>MANAGE BOOKING</span>
                                         </NavLink>
                                     </li>
@@ -66,7 +69,7 @@ const DashboardLayout = () => {
                                 :
                                 <>
                                     <li>
-                                        <NavLink to='/dashboard/userHome'>
+                                        <NavLink to='/dashboard/home'>
                                             <AiFillHome /> <span>User Home</span>
                                         </NavLink>
                                     </li>
