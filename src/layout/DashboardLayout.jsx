@@ -20,12 +20,12 @@ const DashboardLayout = () => {
         <div className="max-w-7xl mx-auto">
             <div className="drawer drawer-mobile">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-                <div className="drawer-content flex flex-col items-center justify-center ">
+                <div className="drawer-content">
+                    <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
 
                     {/*  Page content here  */}
                     <Outlet></Outlet>
 
-                    <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
 
                 </div>
                 <div className="drawer-side bg-dashboard_bg">
@@ -79,7 +79,7 @@ const DashboardLayout = () => {
                                         </NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to='/dashboard/payment'>
+                                        <NavLink to='/dashboard/paymentHistory'>
                                             <FaMoneyCheckAlt /> <span>PAYMENT HISTORY</span>
                                         </NavLink>
                                     </li>

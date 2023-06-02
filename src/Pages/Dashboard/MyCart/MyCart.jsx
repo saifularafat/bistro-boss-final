@@ -1,12 +1,13 @@
 import { Helmet } from "react-helmet-async";
 import useCart from "../../../Component/useCart/useCart";
-// import SectionTitle from "../../../Component/SectionTitle/SectionTitle";
+import SectionTitle from "../../../Component/SectionTitle/SectionTitle";
 
-import { FaEdit, FaTrashAlt } from "react-icons/fa";
+import { FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const MyCart = () => {
-    const [ cart, refetch ] = useCart();
+    const [cart, refetch] = useCart();
     // console.log(cart);
     const total = cart.reduce((sum, item) => item.price + sum, 0)
 
@@ -28,7 +29,7 @@ const MyCart = () => {
                     .then(res => res.json())
                     .then(data => {
                         console.log(data);
-                        if(data.deletedCount > 0){
+                        if (data.deletedCount > 0) {
                             refetch();
                             Swal.fire(
                                 'Deleted!',
@@ -49,18 +50,20 @@ const MyCart = () => {
                     Bistro Boss || My Cart
                 </title>
             </Helmet>
-            {/* <div className="">
+            <div className="">
                 <SectionTitle
                     heading='MANAGE ALL ITEMS'
                     subHeading='Hurry up' />
-            </div> */}
+            </div>
             <div className=" uppercase h-20 font-semibold  flex items-center justify-evenly">
                 <h2 className="text-3xl">Total Items: {cart.length}</h2>
                 <h2 className="text-3xl">Total Total: ${total}</h2>
-                <button className="btn btn-warning">Pay</button>
+                <Link to='/dashboard/payment'>
+                    <button className="btn btn-warning">Pay</button>
+                </Link>
             </div>
 
-            <div className="overflow-x-auto w-full">
+            <div className="overflow-x-auto w-full pl-8">
                 <table className="table w-full">
                     {/* head */}
                     <thead className="bg-dashboard_bg rounded-l-xl rounded-r-xl">
@@ -69,7 +72,6 @@ const MyCart = () => {
                             <th>Item Image</th>
                             <th>Item Name</th>
                             <th>Price</th>
-                            <th>Action</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -90,10 +92,7 @@ const MyCart = () => {
                                 <td>
                                     {item?.name}
                                 </td>
-                                <td className="text-end">${item?.price}</td>
-                                <td>
-                                    <button className="bg-dashboard_bg text-white text-xl p-4 rounded-xl"><FaEdit /></button>
-                                </td>
+                                <td className="">${item?.price}</td>
                                 <td>
                                     <button
                                         onClick={() => handlerDelete(item)}

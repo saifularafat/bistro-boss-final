@@ -11,7 +11,7 @@ import PrivateRouter from "./PrivateRouter";
 
 import DashboardLayout from "../layout/DashboardLayout";
 import UserHome from "../Pages/Dashboard/UserHome/UserHome";
-import Payment from "../Pages/Dashboard/Payment/Payment";
+import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
 import Reservation from "../Pages/Dashboard/Reservation/Reservation";
 import MyCart from "../Pages/Dashboard/MyCart/MyCart";
 import Review from "../Pages/Dashboard/Review/Review";
@@ -23,6 +23,7 @@ import AdminRouter from "./AdminRouter";
 import AdminHome from "../Pages/Dashboard/Admin/AdminHome/AdminHome";
 import ManageItem from "../Pages/Dashboard/Admin/ManageItem/ManageItem";
 import AllBooking from "../Pages/Dashboard/Admin/AllBooking/AllBooking";
+import Payment from "../Pages/Dashboard/Payment/Payment";
 
 
 const router = createBrowserRouter([
@@ -62,6 +63,7 @@ const router = createBrowserRouter([
     path: '/dashboard',
     element: <PrivateRouter> <DashboardLayout /></PrivateRouter>,
     children: [
+       /* User Router setUP */
       {
         path: '/dashboard/home',
         element: <UserHome />
@@ -69,6 +71,10 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/reservation',
         element: <Reservation />
+      },
+      {
+        path: '/dashboard/paymentHistory',
+        element: <PaymentHistory />
       },
       {
         path: '/dashboard/payment',
